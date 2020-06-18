@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    --background-color: #191e2b;
+    --container-color: #252f4d;
+    --text-color: #d9d9d9;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Verdana, Geneva, sans-serif;
+}

@@ -1,0 +1,36 @@
+/* beautiful styles */
+body {
+    margin: 10px 10px;
+}
+
+h1 {
+    padding: 10px 0;
+}
+
+section {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+div {
+    background-color: var(--container-color);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section:not(.animated-grid) div:hover{
+    --transition-time: 500ms;
+    transform: scale(1.15);
+    transition: transform var(--transition-time), filter var(--transition-time);
+}
+
+.basic-grid div:hover { 
+    filter: hue-rotate(80deg);
+}

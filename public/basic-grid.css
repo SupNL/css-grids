@@ -1,0 +1,115 @@
+/* working with grids */
+
+/* basic */
+.basic-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) ;
+}
+
+/* photo gallery */
+.photo-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) ;
+    grid-auto-rows: 240px;
+}
+
+@media screen and (min-width: 600px){
+    .card-tall {
+        grid-row: span 2 / auto;
+    }
+    
+    .card-wide {
+        grid-column: span 2 / auto;
+    }
+}
+
+/* animated */
+.animated-grid {
+    margin-bottom: 80px;
+    display: grid;
+    gap: 1rem;
+
+    /* template */
+    grid-template-areas:
+        'a b c d'
+        'l w w e'
+        'k w w f'
+        'j i h g';
+
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 240px auto auto 240px;
+
+    --delay: 120ms;
+}
+
+.animated-grid div {
+
+    animation: card-cycle 2800ms ease-out infinite;
+    animation-fill-mode: backwards;
+}
+
+@keyframes card-cycle {
+    0% {opacity: 0; transform: scale(0.3); filter: hue-rotate(-180deg)}
+    20% {opacity: 1; transform: scale(1.04); filter:hue-rotate(0deg)}
+    30% {opacity: 1; transform: scale(1); filter:hue-rotate(0deg)}
+    70% {opacity: 1; transform: scale(1); filter:hue-rotate(0deg)}
+    90% {opacity: 0; transform: scale(0.3); filter: hue-rotate(-180deg)}
+    100% {opacity: 0; transform: scale(0.3); filter: hue-rotate(-180deg)}
+}
+
+.animated-grid div:nth-child(1) {
+    grid-area: a;
+    animation-delay: calc(1 * var(--delay));
+}
+.animated-grid div:nth-child(2) {
+    grid-area: b;
+    animation-delay: calc(2 * var(--delay));
+}
+.animated-grid div:nth-child(3) {
+    grid-area: c;
+    animation-delay: calc(3 * var(--delay));
+}
+.animated-grid div:nth-child(4) {
+    grid-area: d;
+    animation-delay: calc(4 * var(--delay));
+}
+.animated-grid div:nth-child(5) {
+    grid-area: e;
+    animation-delay: calc(5 * var(--delay));
+}
+.animated-grid div:nth-child(6) {
+    grid-area: f;
+    animation-delay: calc(6 * var(--delay));
+}
+.animated-grid div:nth-child(7) {
+    grid-area: g;
+    animation-delay: calc(7 * var(--delay));
+}
+.animated-grid div:nth-child(8) {
+    grid-area: h;
+    animation-delay: calc(8 * var(--delay));
+}
+.animated-grid div:nth-child(9) {
+    grid-area: i;
+    animation-delay: calc(9 * var(--delay));
+}
+.animated-grid div:nth-child(10) {
+    grid-area: j;
+    animation-delay: calc(10 * var(--delay));
+}
+.animated-grid div:nth-child(11) {
+    grid-area: k;
+    animation-delay: calc(11 * var(--delay)); 
+}
+.animated-grid div:nth-child(12) {
+    grid-area: l;
+    animation-delay: calc(12 * var(--delay));
+}
+.animated-grid div:nth-child(13) {
+    grid-area: w;
+    animation-delay: calc(13 * var(--delay));
+}
